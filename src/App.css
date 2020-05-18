@@ -1,0 +1,246 @@
+/* Animaciones de rutas */
+.container {
+  position: relative;
+  height: 100%;
+}
+ 
+.inner {
+  position: absolute;
+  width: 100%;
+}
+ 
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+ 
+.fade-enter.fade-enter-active,
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+ 
+.fade-exit {
+  opacity: 1;
+}
+ 
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+}
+
+.App-section-logo{
+  height: 10vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-section-logo{
+    animation: App-logo-spin infinite 20s linear;
+  }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #d4c817a2;
+  min-height: 100vh;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(19, 18, 18) ;
+}
+
+.App-section-futbol {
+  background-color: #6da538a2;
+  min-height: 25;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(19, 18, 18) ;
+}
+
+.App-section-food {
+  background-color: #a55a38a2;
+  min-height: 25;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(19, 18, 18) ;
+}
+
+.App-section-hot {
+  background-color: #b91a1aa2;
+  min-height: 25;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(19, 18, 18) ;
+}
+
+.App-section-fly {
+  background-color: #1b9fb1a2;
+  min-height: 25;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(19, 18, 18) ;
+}
+
+.App-link {
+  color: #219e83;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.anim-appear {
+  opacity: 0.01;
+}
+ 
+.anim-appear.anim-appear-active{
+  opacity: 2;
+  transition: opacity 1s ease-in;
+}
+
+.anim-enter {
+  opacity: 0.01;
+}
+ 
+.anim-enter.anim-enter-active {
+  opacity: 2;
+  transition: opacity 1s ease-in;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+ 
+.inner {
+  position: absolute;
+  width: 100%;
+}
+ 
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+ 
+.fade-enter.fade-enter-active,
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+ 
+.fade-exit {
+  opacity: 1;
+}
+ 
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+
+/* animacion para las letras! */
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+*, *:before, *:after{
+  box-sizing:border-box;
+}
+body{
+  font-family: 'Lato', sans-serif;
+}
+div.foo{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.letter{
+  display: inline-block;
+  font-weight: 200;
+  font-size: 5em;
+  margin: 0.2em;
+  position: relative;
+  color: rgb(0, 0, 0);
+  transform-style: preserve-3d;
+  perspective: 400;
+  z-index: 1;
+}
+.letter:before, .letter:after{
+  position: absolute  ;
+  content: attr(data-letter);
+  transform-origin: top left;
+  top:0;
+  left:0;
+}
+.letter, .letter:before, .letter:after{
+  transition: all 0.3s ease-in-out;
+}
+.letter:before{
+  color: #fff;
+  text-shadow: 
+    -1px 0px 1px rgba(255,255,255,.8),
+    1px 0px 1px rgba(0,0,0,.8);
+  z-index: 3;
+  transform:
+    rotateX(0deg)
+    rotateY(-15deg)
+    rotateZ(0deg);
+}
+.letter:after{
+  color: rgba(0,0,0,.11);
+  z-index:2;
+  transform:
+    scale(1.08,1)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    skew(0deg,1deg);
+}
+.letter:hover:before{
+  color: #fafafa;
+  transform:
+    rotateX(0deg)
+    rotateY(-40deg)
+    rotateZ(0deg);
+}
+.letter:hover:after{
+  transform:
+    scale(1.1,1)
+    rotateX(0deg)
+    rotateY(40deg)
+    rotateZ(0deg)
+    skew(0deg,22deg);
+}
